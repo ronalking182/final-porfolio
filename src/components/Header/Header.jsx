@@ -12,10 +12,10 @@ const Header = () => {
   const headerShadow = useHeaderShadow();
 
   //to handle click outside of sidebar on mobile
-  useOutsideAlerter({
-    menuRef,
-    setMenuOpened,
-  });
+  // useOutsideAlerter({
+  //   menuRef,
+  //   setMenuOpened,
+  // });
 
   return (
     <motion.div
@@ -33,9 +33,9 @@ const Header = () => {
           ref={menuRef}
           style={getMenuStyles(menuOpened)}
         >
-          <li><a href="#experties">Services</a></li>
-          <li><a href="#work">Experience</a></li>
-          <li><a href="#portfolio">Project</a></li>
+          <li ><a href="#experties" onClick={() => setMenuOpened((prev) => !prev)}>Services</a></li>
+          <li ><a href="#work" onClick={() => setMenuOpened((prev) => !prev)}>Experience</a></li>
+          <li onClick={() => setMenuOpened((prev) => !prev)}><a href="#portfolio">Project</a></li>
           {/* <li><a href="#people">Testimonials</a></li> */}
           <li className={`flexCenter ${css.phone}`}>
             <p>+234 (081) 355 4865</p>
